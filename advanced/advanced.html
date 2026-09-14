@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>QRify — Tùy chỉnh nâng cao</title><link rel="stylesheet" href="advanced.css">
+</head>
+<body>
+<main class="layout">
+<header><a href="../index.html" class="back">← QRify</a><span class="tag">ADVANCED</span></header>
+<section class="intro"><p>TÙY CHỈNH QR</p><h1>Làm mã QR<br><span>mang phong cách của bạn.</span></h1></section>
+<section class="workspace">
+<div class="preview card"><div class="qr-box"><canvas id="qrCanvas" width="600" height="600"></canvas></div><p id="previewUrl">Dán link để xem QR</p><button id="downloadBtn">Tải PNG</button></div>
+<div class="controls card">
+<label>Đường link</label><input id="urlInput" type="url" placeholder="https://example.com">
+<p id="error" class="error"></p>
+<div class="control"><div class="row"><strong>Màu QR</strong><span id="colorValue">#000000</span></div><div class="swatches"><button data-color="#000000" style="background:#000000"></button><button data-color="#2563eb" style="background:#2563eb"></button><button data-color="#16a34a" style="background:#16a34a"></button><button data-color="#7c3aed" style="background:#7c3aed"></button><button data-color="#dc2626" style="background:#dc2626"></button><button data-color="#ea580c" style="background:#ea580c"></button><input id="colorPicker" type="color" value="#000000"></div></div>
+<div class="control"><div class="row"><strong>Logo</strong><button id="removeLogo" class="small-btn">Xóa</button></div><label class="upload"><input id="logoInput" type="file" accept="image/png,image/jpeg,image/webp"><span>＋ Thêm logo</span></label></div>
+<div class="control"><strong>Kiểu logo</strong><div class="seg"><button data-shape="square" class="active">Vuông bo góc</button><button data-shape="circle">Tròn</button></div></div>
+<div class="control"><div class="row"><strong>Kích thước logo</strong><span id="sizeValue">18%</span></div><input id="logoSize" type="range" min="10" max="22" value="18"></div>
+<p class="hint">QR mặc định dùng error correction cao và nền trắng để giữ khả năng quét tốt khi có logo.</p>
+</div>
+</section>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script><script src="advanced.js"></script>
+</body></html>
