@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QRify — Tạo mã QR miễn phí</title>
+  <meta name="description" content="Tạo mã QR từ đường link nhanh chóng, miễn phí và không quảng cáo.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="brand"><span class="brand-mark">Q</span><span>QRify</span></header>
+
+    <section class="hero">
+      <p class="eyebrow">SIMPLE QR GENERATOR</p>
+      <h1>Tạo mã QR<br><span>từ đường link.</span></h1>
+      <p class="subtitle">Dán link, tạo mã QR và tải xuống. Không quảng cáo, không vòng vo.</p>
+    </section>
+
+    <section class="card generator-card">
+      <div class="field-head">
+        <label for="urlInput">Đường link của bạn</label>
+        <button id="pasteBtn" class="text-btn" type="button">Dán từ clipboard</button>
+      </div>
+
+      <div class="input-wrap">
+        <span class="input-icon">↗</span>
+        <input id="urlInput" type="url" placeholder="https://example.com" autocomplete="off" spellcheck="false">
+        <button id="clearBtn" class="clear-btn" type="button" aria-label="Xóa">×</button>
+      </div>
+      <p id="errorMessage" class="error" aria-live="polite"></p>
+
+      <button id="generateBtn" class="primary-btn" type="button">Tạo mã QR <span>→</span></button>
+
+      <div id="result" class="result" hidden>
+        <div class="divider"></div>
+        <div class="qr-shell"><canvas id="qrCanvas" width="520" height="520"></canvas></div>
+        <p id="resultUrl" class="result-url"></p>
+        <div class="actions">
+          <button id="downloadBtn" class="secondary-btn" type="button">Tải PNG</button>
+          <a class="advanced-link" href="advanced/advanced.html">⚙ Tùy chỉnh nâng cao</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-grid">
+      <article><strong>⚡ Nhanh</strong><span>Tạo QR ngay trên trình duyệt.</span></article>
+      <article><strong>🔒 Riêng tư</strong><span>Không cần tài khoản hay database.</span></article>
+      <article><strong>♾ Không hết hạn</strong><span>QR tĩnh đi thẳng tới link.</span></article>
+    </section>
+
+    <footer>© 2026 Nguyễn Hoàng Trung (Shima2k) · QR codes, without the hassle.</footer>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
