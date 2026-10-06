@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đoàn Thanh niên - Trường Cao đẳng Nông nghiệp Nam Bộ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+        <header class="school-header">
+          <div class="logo-box">
+            <img src="LOGO.jpeg" alt="Logo Trường Cao đẳng Nông nghiệp Nam Bộ">
+          </div>
+
+          <div class="school-info">
+            <div class="school-name">
+              TRƯỜNG CAO ĐẲNG NÔNG NGHIỆP NAM BỘ
+            </div>
+
+            <div class="union-name">
+              ĐOÀN THANH NIÊN TRƯỜNG CAO ĐẲNG NÔNG NGHIỆP NAM BỘ
+            </div>
+          </div>
+    </header>
+
+    <section class="hero">
+      <h1>CỔNG ĐĂNG KÝ HOẠT ĐỘNG<br>PHONG TRÀO</h1>
+      <div class="year">🌱 CĐNNNB • 2026 🌱</div>
+    </section>
+
+    <section class="activities" id="activities"></section>
+
+    <button class="list-button" onclick="openList()">📋 XEM DANH SÁCH</button>
+  </main>
+
+  <div class="modal hidden" id="modal">
+    <div class="modal-card">
+      <button class="close" onclick="closeModal()">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,322 @@
+* { box-sizing: border-box; }
+
+:root {
+  --green: #19733a;
+  --green-dark: #11572c;
+  --green-soft: #eef8f0;
+  --yellow: #f4c542;
+  --ink: #17351f;
+  --muted: #68756c;
+  --line: #dce6de;
+  --white: #fff;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--ink);
+  background: linear-gradient(180deg, #f6fbf6 0%, #eef5ef 100%);
+}
+
+.page {
+  width: min(100%, 720px);
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--white);
+  box-shadow: 0 0 28px rgba(22, 74, 38, .08);
+}
+
+.school-header {
+  padding: 18px 22px 16px;
+  border: 1px solid #a8b8ab;
+  border-bottom: 0;
+  background: #fff;
+}
+
+.logo-box {
+  width: 92px;
+  height: 48px;
+  border: 1px dashed #9aa89d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #667269;
+  margin-bottom: 10px;
+}
+
+.school-name {
+  font-size: clamp(15px, 3vw, 20px);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.union-name {
+  margin-top: 5px;
+  font-size: clamp(12px, 2.5vw, 16px);
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.hero {
+  padding: 34px 20px 28px;
+  text-align: center;
+  border: 1px solid #a8b8ab;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(91, 173, 105, .12), transparent 35%),
+    #fff;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(22px, 5vw, 34px);
+  line-height: 1.35;
+  letter-spacing: .5px;
+}
+
+.year {
+  margin-top: 26px;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.activities {
+  padding: 26px 20px 12px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.activity {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 17px 14px;
+  background: #fff;
+  cursor: pointer;
+  transition: .18s ease;
+  box-shadow: 0 3px 10px rgba(28, 74, 39, .05);
+}
+
+.activity:hover {
+  transform: translateY(-2px);
+  border-color: #a8cbb0;
+  box-shadow: 0 8px 18px rgba(28, 74, 39, .1);
+}
+
+.activity .icon {
+  font-size: 25px;
+  margin-right: 7px;
+}
+
+.activity .name {
+  font-weight: 750;
+  font-size: 15px;
+}
+
+.activity .hint {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.list-button {
+  display: block;
+  margin: 14px auto 28px;
+  border: 0;
+  border-radius: 999px;
+  padding: 13px 25px;
+  background: var(--green);
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.list-button:hover { background: var(--green-dark); }
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 30, 17, .45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 10;
+}
+
+.hidden { display: none; }
+
+.modal-card {
+  width: min(100%, 650px);
+  max-height: 90vh;
+  overflow: auto;
+  background: #fff;
+  border-radius: 18px;
+  padding: 24px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 50%;
+  background: #edf3ee;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.form-title {
+  margin: 0 40px 20px 0;
+  color: var(--green-dark);
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  font-size: 14px;
+  margin: 14px 0 7px;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px 13px;
+  border: 1px solid #ccd8ce;
+  border-radius: 10px;
+  font: inherit;
+  outline: none;
+}
+
+input:focus, select:focus {
+  border-color: #6cab7c;
+  box-shadow: 0 0 0 3px rgba(75, 148, 89, .12);
+}
+
+.section-title {
+  margin-top: 23px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+  color: var(--green-dark);
+}
+
+.member {
+  padding: 12px;
+  border: 1px solid #e0e9e1;
+  border-radius: 12px;
+  margin-top: 10px;
+  background: #fafdfb;
+}
+
+.member-grid {
+  display: grid;
+  grid-template-columns: 1.4fr .7fr .8fr;
+  gap: 9px;
+}
+
+.member-grid label { margin-top: 0; }
+
+.add-member {
+  margin-top: 11px;
+  border: 1px dashed #73a67e;
+  background: var(--green-soft);
+  color: var(--green-dark);
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.submit {
+  width: 100%;
+  margin-top: 22px;
+  border: 0;
+  border-radius: 11px;
+  padding: 13px;
+  background: var(--green);
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.note {
+  padding: 11px 12px;
+  border-radius: 10px;
+  background: #fff9e3;
+  color: #6c5913;
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+@media (max-width: 520px) {
+  .activities { grid-template-columns: 1fr; }
+  .member-grid { grid-template-columns: 1fr; }
+  .page { box-shadow: none; }
+}
+
+.req{color:#c62828;font-weight:700}.field-error{border-color:#c62828!important;}
+
+
+.req{color:#c62828;font-weight:700}
+.form-message{margin:12px 0;padding:10px 12px;border-radius:10px;font-size:14px}
+.form-message.error{background:#ffebee;color:#b71c1c}
+.form-message.info{background:#e8f5e9;color:#1b5e20}
+.form-message.success{background:#e8f5e9;color:#1b5e20}
+.submit:disabled{opacity:.65;cursor:not-allowed}
+.success-box{text-align:center;padding:24px 8px}
+.success-icon{width:54px;height:54px;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;background:#2e7d32;color:#fff;font-size:30px;font-weight:700}
+.registration-list{margin-top:16px;display:grid;gap:10px}
+.registration-item{padding:12px 14px;border:1px solid #e0e0e0;border-radius:12px;background:#fff}
+.registration-item small{display:block;margin-top:5px;opacity:.7}
+.logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-box img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  display: block;
+}
+.school-header {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 16px 28px;
+}
+
+.logo-box {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-box img {
+  width: 95px;
+  height: 95px;
+  object-fit: contain;
+  display: block;
+}
+
+.school-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.school-name {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.union-name {
+  margin-top: 8px;
+  line-height: 1.2;
+}
