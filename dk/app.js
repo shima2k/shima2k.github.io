@@ -86,7 +86,9 @@ function openActivity(id) {
 
       <div class="section-title">NGƯỜI THAM GIA</div>
       <div id="members"></div>
-      <button type="button" class="add-member" onclick="addMember()">＋ Thêm thành viên</button>
+      ${id !== "cam-hoa" ? `
+  <button type="button" class="add-member" onclick="addMember()">＋ Thêm thành viên</button>
+` : ""}
 
       ${ruleNote(id)}
 
